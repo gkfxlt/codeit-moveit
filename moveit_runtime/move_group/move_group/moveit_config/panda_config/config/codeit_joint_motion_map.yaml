@@ -1,0 +1,14 @@
+
+# joint name and motion index map for codeit.
+# value -1 for unused.
+
+panda_joint1: 0
+panda_joint2: 1
+panda_joint3: 2
+panda_joint4: 3
+panda_joint5: 4
+panda_joint6: 5
+panda_joint7: 6
+panda_finger_joint1: -1
+panda_finger_joint2: -1
+

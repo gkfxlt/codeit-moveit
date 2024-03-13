@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="fg100">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.014314 -0.19331 0.97813"
+        rpy="0 0 0" />
+      <mass
+        value="1.6109" />
+      <inertia
+        ixx="1.6193"
+        ixy="-0.037377"
+        ixz="-0.021821"
+        iyy="0.26694"
+        iyz="-0.57749"
+        izz="1.376" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0.014314 -0.19331 0.97813"
+        rpy="0 0 0" />
+      <mass
+        value="1.6109" />
+      <inertia
+        ixx="1.6193"
+        ixy="-0.037377"
+        ixz="-0.021821"
+        iyy="0.26694"
+        iyz="-0.57749"
+        izz="1.376" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.570796327"
+      upper="1.570796327"
+      effort="150"
+      velocity="3.15" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.75927" />
+      <inertia
+        ixx="0.00045876"
+        ixy="-5.1006E-36"
+        ixz="-4.702E-36"
+        iyy="0.0027603"
+        iyz="-1.752E-36"
+        izz="0.0027603" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0.59534 1.2791"
+      rpy="0 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.401425728"
+      upper="1.055226066"
+      effort="150"
+      velocity="3.15" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="-1.966E-17 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.77447" />
+      <inertia
+        ixx="0.0004773"
+        ixy="-5.2544E-36"
+        ixz="-9.404E-36"
+        iyy="0.0028202"
+        iyz="-1.8229E-36"
+        izz="0.0028202" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0 -1.7232 -0.68814"
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.401425728"
+      upper="1.055226066"
+      effort="150"
+      velocity="3.15" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00178608338815952" />
+      <inertia
+        ixx="8.93041694079474E-10"
+        ixy="-9.81151175959585E-40"
+        ixz="0"
+        iyy="4.81092108590083E-05"
+        iyz="0"
+        izz="4.81092108590083E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0.28426 -0.054542 0.86037"
+      rpy="0 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.401425728"
+      upper="1.055226066"
+      effort="150"
+      velocity="3.15" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-0.269949903702383 0.989116997337393 -0.473198780431863"
+        rpy="0 0 0" />
+      <mass
+        value="1.61092133204133" />
+      <inertia
+        ixx="1.61928204684905"
+        ixy="-0.0373768373568279"
+        ixz="-0.0218207267756095"
+        iyy="0.266941808795941"
+        iyz="-0.577494131270086"
+        izz="1.37604930088549" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.8"
+      effort="150"
+      velocity="3.15" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="-0.27047 -1.7473 -0.68369"
+        rpy="0 0 0" />
+      <mass
+        value="1.6109" />
+      <inertia
+        ixx="1.6193"
+        ixy="-0.037377"
+        ixz="-0.021821"
+        iyy="0.26694"
+        iyz="-0.57749"
+        izz="1.376" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="0.00052145 2.7364 0.21049"
+      rpy="0 0 0" />
+    <parent
+      link="link5" />
+    <child
+      link="link6" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.33"
+      upper="0.33"
+      effort="150"
+      velocity="3.15" />
+  </joint>
+  <link
+    name="link7">
+    <inertial>
+      <origin
+        xyz="-0.24249 -1.6482 -0.91408"
+        rpy="0 0 0" />
+      <mass
+        value="1.6109" />
+      <inertia
+        ixx="1.6193"
+        ixy="-0.037377"
+        ixz="-0.021821"
+        iyy="0.26694"
+        iyz="-0.57749"
+        izz="1.376" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint7"
+    type="revolute">
+    <origin
+      xyz="-0.02798 -0.09913 0.23038"
+      rpy="0 0 0" />
+    <parent
+      link="link6" />
+    <child
+      link="link7" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.570796327"
+      upper="1.570796327"
+      effort="150"
+      velocity="3.15" />
+  </joint>
+  <link
+    name="link8">
+    <inertial>
+      <origin
+        xyz="-0.34138 -1.6483 -1.2067"
+        rpy="0 0 0" />
+      <mass
+        value="1.6109" />
+      <inertia
+        ixx="1.6193"
+        ixy="-0.037377"
+        ixz="-0.021821"
+        iyy="0.26694"
+        iyz="-0.57749"
+        izz="1.376" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fg100/meshes/link8.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint8"
+    type="fixed">
+    <origin
+      xyz="0.098886 0.0001969 0.29263"
+      rpy="0 0 0" />
+    <parent
+      link="link7" />
+    <child
+      link="link8" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="150"
+      velocity="3.15" />
+  </joint>
+</robot>

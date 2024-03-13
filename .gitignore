@@ -1,0 +1,9 @@
+.vs
+.vscode
+.idea
+.devcontainer
+cmake-build*
+build*
+CMakeLists.txt.user
+out
+log

@@ -1,0 +1,2 @@
+config : ur5_config
+plugin_root_path: /usr/codeit/codeit-1.0.8/plugins;C:\codeit\codeit-1.0.8\plugins

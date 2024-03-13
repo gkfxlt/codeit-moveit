@@ -1,0 +1,19 @@
+
+# joint name and motion index map for codeit.
+# value -1 for unused.
+
+r_shoulder_pan_joint: 0
+r_shoulder_lift_joint: 1
+r_upper_arm_roll_joint: 2
+r_elbow_flex_joint: 3
+r_forearm_roll_joint: 4
+r_wrist_flex_joint: 5
+r_wrist_roll_joint: 6
+
+l_shoulder_pan_joint: 7
+l_shoulder_lift_joint: 8
+l_upper_arm_roll_joint: 9
+l_elbow_flex_joint: 10
+l_forearm_roll_joint: 11
+l_wrist_flex_joint: 12
+l_wrist_roll_joint: 13

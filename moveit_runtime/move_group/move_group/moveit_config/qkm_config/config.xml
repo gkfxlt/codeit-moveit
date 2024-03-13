@@ -1,0 +1,106 @@
+<group name="/">
+    <param name="package_location" value="./"/>
+    <param name="urdf_path" value="urdf/qkm.urdf"/>
+    <param name="srdf_path" value="srdf/qkm.srdf"/>
+
+    <param name="capability_plugins_path"
+           value="../plugins/move_group_capabilities_default ../plugins/ros_adapter_capability"/>
+    <param name="kinematics_plugins_path" value="../plugins/kinematics_plugins"/>
+    <param name="planner_plugins_path" value="../plugins/planner_plugins"/>
+    <param name="planner_adapter_plugins_path" value="../plugins/moveit_default_planning_request_adapter_plugins"/>
+    <param name="controller_plugins_path" value="../plugins/controller_plugins"/>
+    <param name="perception_plugins_path" value="../plugins/perception_plugins"/>
+
+    <group name="robot_description_planning">
+        <param name="joint_limits_config_path" value="config/joint_limits.yaml"/>
+        <param name="cartesian_limits_config_path" value="config/cartesian_limits.yaml"/>
+    </group>
+
+    <group name="robot_description_kinematics">
+        <param name="kinematics_config_path" value="config/kinematics.yaml"/>
+    </group>
+
+    <group name="move_group">
+        <param name="debug" value="false"/>
+
+        <param name="allow_trajectory_execution" value="true"/>
+        <param name="max_safe_path_cost" value="1"/>
+        <param name="jiggle_fraction" value="0.05"/>
+
+        <param name="default_planning_pipeline" value="ompl"/>
+        <param name="capabilities" value="move_group/RosAdpater"/>
+        <param name="disable_capabilities" value=""/>
+
+        <group name="octomap">
+            <param name="octomap_resolution" value="0.025"/>
+            <param name="octomap_frame" value=""/>
+        </group>
+
+        <group name="more_transform">
+            <param name="enable" value=""/>
+            <param name="transform_1" value="0 0 0 0 0 0 world panda_link0"/>
+            <param name="transform_2" value="0 0 0 0 0 0 world panda_link0"/>
+        </group>
+
+        <group name="planning_scene_monitor">
+            <param name="publish_geometry_updates" value="true"/>
+            <param name="publish_planning_scene" value="true"/>
+            <param name="publish_planning_scene_hz" value="4.0"/>
+            <param name="publish_state_updates" value="true"/>
+            <param name="publish_transforms_updates" value="true"/>
+            <param name="perception_config_path" value="config/sensors_3d.yaml"/>
+        </group>
+
+<!--        <group name="controller">-->
+<!--            <param name="moveit_controller_manager" value="moveit_fake_controller_manager/MoveItFakeControllerManager"/>-->
+<!--            <param name="moveit_manage_controllers" value="true"/>-->
+<!--            <param name="controller_config_path" value="config/fake_controllers.yaml"/>-->
+<!--            <param name="joint_motion_map_path" value="config/codeit_joint_motion_map.yaml"/>-->
+<!--        </group>-->
+        <group name="controller">
+            <param name="moveit_controller_manager" value="moveit_simple_controller_manager::MoveItSimpleControllerManager"/>
+            <param name="moveit_manage_controllers" value="true"/>
+            <param name="controller_config_path" value="config/codeit_controllers.yaml"/>
+            <param name="joint_motion_map_path" value="config/codeit_joint_motion_map.yaml"/>
+        </group>
+
+        <group name="plan_execution">
+            <param name="max_replan_attempts" value="5"/>
+            <param name="record_trajectory_state_frequency" value="0.0"/>
+        </group>
+
+        <group name="trajectory_execution">
+            <param name="allowed_execution_duration_scaling" value="1.2"/>
+            <param name="allowed_goal_duration_margin" value="0.5"/>
+            <param name="allowed_start_tolerance" value="0.01"/>
+            <param name="execution_duration_monitoring" value="true"/>
+            <param name="execution_velocity_scaling" value="1.0"/>
+            <param name="wait_for_trajectory_completion" value="true"/>
+        </group>
+
+        <group name="planning_pipelines">
+            <group name="ompl">
+                <param name="planning_plugin" value="ompl_interface/OMPLPlannerManager"/>
+                <param name="request_adapters" value="default_planner_request_adapters/AddTimeParameterization
+              default_planner_request_adapters/ResolveConstraintFrames
+              default_planner_request_adapters/FixWorkspaceBounds
+              default_planner_request_adapters/FixStartStateBounds
+              default_planner_request_adapters/FixStartStateCollision
+              default_planner_request_adapters/FixStartStatePathConstraints"/>
+                <param name="start_state_max_bounds_error" value="0.1"/>
+                <param name="config_path" value="config/ompl_planning.yaml"/>
+            </group>
+<!--            <group name="chomp">
+                <param name="planning_plugin" value="chomp_interface/CHOMPPlanner"/>
+                <param name="request_adapters" value="default_planner_request_adapters/AddTimeParameterization
+              default_planner_request_adapters/ResolveConstraintFrames
+              default_planner_request_adapters/FixWorkspaceBounds
+              default_planner_request_adapters/FixStartStateBounds
+              default_planner_request_adapters/FixStartStateCollision
+              default_planner_request_adapters/FixStartStatePathConstraints"/>
+                <param name="start_state_max_bounds_error" value="0.1"/>
+                <param name="config_path" value="config/chomp_planning.yaml"/>
+            </group>-->
+        </group>
+    </group>
+</group>

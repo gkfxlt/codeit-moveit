@@ -1,0 +1,11 @@
+
+# joint name and motion index map for codeit.
+# value -1 for unused.
+
+joint1: 0
+joint2: 1
+joint3: 2
+joint4: 3
+joint5: 4
+joint6: 5
+joint7: 6
